@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div>
+    <br />
+    <div class="selected-book rounded">
+      <router-outlet></router-outlet>
+    </div>
+
+    <br />
+
+    <div class="row">
+      <div class="text-end">
+        <pagination-controls (pageChange)="pagina = $event"></pagination-controls>
+      </div>
+      <div>
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchedBook" autocomplete="off"
+          placeholder="&#61442;  Busca un libro o un autor..." />
+      </div>
+      <br />
+      <br />
+      <br />
+      <div *ngFor="
+          let book of books
+            | filter : searchedBook
+            | paginate : { itemsPerPage: 5, currentPage: pagina }
+        " class="col mb-2">
+        <div class="card p-2" style="width: 15rem; height: 33rem" [routerLink]="['detail',book.id]">
+
+          <img class="card-img-top" src="{{ book.image }}" alt="{{ book.name }}"/>
+          <div class="card-body">
+            <h5 class="card-title">{{ book.name }}</h5>
+            <p class="card-text">[{{ book.editorial.name }}]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <br />
+      <br />
+    </div>
+    <br />
+    <br />
+  </div>
+</div>

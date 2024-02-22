@@ -1,0 +1,45 @@
+<div class="container mt-4" style=" background: transparent;
+    border: gray;
+    border-style: solid;">
+  <h2 class="text-center">Create Editorial</h2>
+  <form [formGroup]="editorialForm" (ngSubmit)="createEditorial(editorialForm.value)">
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="name"> Editorial Name </label>
+      <input novalidate id="name" class="form-control" formControlName="name" placeholder="Editorial Name" />
+    </div>
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="name"> Fecha de creacion </label><br>
+      <input type="date" novalidate id="date" class="form-control" formControlName="date"/>
+    </div>
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="name"> Email de editorial </label>
+      <input novalidate id="email" class="form-control" formControlName="email" placeholder="Editorial Email" />
+    </div>
+    <div class="alert alert-danger alert-dismissible fade show" *ngIf="
+        editorialForm.get('name')?.hasError('required') &&
+        editorialForm.get('name')?.touched
+      ">
+      Name required
+    </div>
+    <div class="alert alert-danger alert-dismissible fade show" *ngIf="
+        editorialForm.get('date')?.hasError('required') &&
+        editorialForm.get('date')?.touched
+      ">
+      Date required
+    </div>
+    <div class="alert alert-danger alert-dismissible fade show" *ngIf="
+        (editorialForm.get('email')?.hasError('required') || editorialForm.get('email')?.hasError('email')) &&
+        editorialForm.get('email')?.touched
+      ">
+      Email required
+    </div>
+    <div class="text-center">
+      <button id="submit" type="submit" class="btn btn-primary btn-lg" [disabled]="editorialForm.invalid">
+        Create
+      </button>
+      <button type="button" class="btn btn-danger ml-3 btn-lg" (click)="cancelCreation()">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

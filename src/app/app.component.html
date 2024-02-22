@@ -1,0 +1,113 @@
+<!-- Navigation bar -->
+<div class="container-fluid">
+  <div class="row">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #0d0d0d">
+      <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/books/list">LIBRERÍA ANGULAR</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Libros</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" routerLink="/books/list">Lista</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" routerLink="/books/create">Nuevo libro</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Autores
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" routerLink="/authors/list">Lista</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" routerLink="/authors/create">Nuevo autor</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Editoriales</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" routerLink="/editorials/list">Lista</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" routerLink="/editorials/create">Nueva editorial</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Main Router Outlet -->
+  <div class="row" id="principal">
+    <div class="row main-text bg-dark h-100">
+      <div class="col-md-3">
+        <div class="row sticky-top">
+          <div class="row mb-2">
+            <div class="col-md-12">
+              <br />
+              <br />
+              <br />
+              <br />
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-md-12 text-center">
+              <h1>¡Explora nuestros libros!</h1>
+            </div>
+          </div>
+          <div class="row">
+            <br />
+            <br />
+            <br />
+            <div class="col-md-12">
+              <img class="img-fluid mx-auto d-block" src="../assets/booksIcon.png" alt="icon" />
+              <div class="col-md-12 text-center">
+                <h1>
+                  Disfruta esta maravillosa colección!
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <footer class="fixed-bottom page-footer font-small blue pt-4" style="background-color: #0d0d0d">
+      <!-- Footer Links -->
+      <div class="container-fluid text-center text-md-left">
+        <div class="row">
+          <div class="col-md-12 mt-md-0 mt-3">
+            <!-- Content -->
+            <h6 class="text-uppercase">TE PRESENTO LA LIBRERÍA DE ANGULAR</h6>
+
+          </div>
+        </div>
+        <!-- Grid row -->
+      </div>
+    </footer>
+  </div>
+</div>
